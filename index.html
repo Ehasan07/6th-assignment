@@ -1,13 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Star</title>
+    <title>Retro Star Forum</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" defer></script>
 
 </head>
+
 <body>
-    <h1>hello bangladesh</h1>
-    
+    <nav
+        class="nav lg:mb-10 text-black flex flex-col md:flex-row justify-between align-middle items-center px-10  py-5">
+        <div class="left">
+            <h1 class="font-bold text-2xl text-[#12132D]">Retro Star Forum</h1>
+        </div>
+        <div class="right flex gap-4 py-2 md:py-0">
+            <div title="Home" class="w-10 h-10 rounded-full p-2 bg-gray-200
+            flex justify-center items-center
+            ">
+                <i class="fa-solid fa-house bg-transparent"></i>
+            </div>
+            <div title="Tooltip" class="w-10 h-10 rounded-full p-2 bg-gray-200
+            flex justify-center items-center
+            ">
+                <i class="fa-solid fa-pen bg-transparent"></i>
+            </div>
+            <div title="Add" class="w-10 h-10 rounded-full p-2 bg-gray-200
+            flex justify-center items-center
+            ">
+                <i class="fa-solid fa-user-plus bg-transparent"></i>
+            </div>
+            <div title="Flag" class="w-10 h-10 rounded-full p-2 bg-gray-200
+            flex justify-center items-center
+            ">
+                <i class="fa-regular fa-flag bg-transparent"></i>
+            </div>
+            <button class="rounded-2xl px-4 py-2 font-bold bg-[#797DFC] text-white whitespace-nowrap">Sign In</button>
+        </div>
+    </nav>
+
+    <main>
+        <div
+            class="heroSec  text-black flex flex-col md:flex-row justify-center gap-5 md:gap-20 items-center px-4 md:px-20 md:w-fit mx-auto h-[150vw] md:h-[25vw] bg-[#12132D] md:rounded-lg">
+            <div class="left bg-transparent p-3 text-white">
+                <h1 class="font-bold text-4xl bg-transparent">
+                    Welcome to the <span class="bg-transparent">Data Forum</span>
+                </h1>
+                <p class="py-4 bg-transparent w-[80%] md:w-full">
+                    Share your favorite opinion and win a forum coffee mug!
+                </p>
+
+                <div class="inputSec bg-white p-2 md:px-4 md:py-2 rounded-xl flex justify-between">
+                    <input type="text" placeholder="Search Here Anything" id="input"
+                        class="flex-1 border-none outline-none text-black font-semibold md:text-xl">
+                    <button id="searchbtn" class="bg-[#797DFC] p-4 rounded-lg btn border-none text-white hover:bg-[#5c61f2]">search</button>
+                </div>
+            </div>
+            <div class="right p-4 rounded-xl">
+                <div class="flex justify-between items-center gap-5">
+                    <h1>Registered Users</h1>
+                    <p>01</p>
+                </div>
+                <div class="flex justify-between items-center gap-5">
+                    <h1>Forum</h1>
+                    <p>01</p>
+                </div>
+                <div class="flex justify-between items-center">
+                    <h1>Topics</h1>
+                    <p>01</p>
+                </div>
+                <div class="flex justify-between items-center gap-5">
+                    <h1>Replies</h1>
+                    <p>01</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- discuss section -->
+        <div class="discuss mt-10 md:mt-20 px-10 md:px-0 ">
+            <div class="top items-center flex flex-col text-black">
+                <h1 class="font-bold text-2xl md:text-3xl">Les't Discuss</h1>
+                <p class="md:w-[30%] pt-4 text-center pb-3">
+                    Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined .
+                </p>
+            </div>
+            <div class="spinner ml-[50%] text-black">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+            <!-- content -->
+            <div class="content text-black flex flex-col md:flex-row md:justify-center gap-20 mt-10 md:mt-0 ">
+
+                <div class="contentLeft flex flex-col bg-[#f3f3f5] md:p-10 md:w-fit w-[130%] ml-[-35px] md:ml0" id="left">
+                </div>
+
+                <div class="contentRight bg-[#f3f3f5] p-4 ">
+                    <div class="top flex gap-10 bg-[#f3f3f5] justify-between">
+                        <h1 class="bg-[#f3f3f5] font-bold">Title</h1>
+                        <h1 class="bg-[#f3f3f5]">Mark as read (<span class="bg-[#f3f3f5]" id="readCount">0</span>)</h1>
+                    </div>
+
+                    <div id="dataSection" class="mt-10 bg-[#f3f3f5] h-fit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- join section -->
+        <div
+            class="join text-white flex flex-col md:flex-row justify-center   items-center bg-[#12132D] w-fit mx-auto md:px-20 mt-10 gap-5 rounded-2xl">
+            <div class="left md:w-[50%]">
+                <h1 class="text-2xl md:text-4xl font-bold bg-[#12132D] ">Join Our Forum</h1>
+                <p class="py-4 bg-[#12132D] ">
+                    Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view
+                    the results directly within the app.
+                </p>
+                <div class="bg-[#12132D] ">
+                    <button class=" hover:bg-[#797DFC] text-black  btn bg-[#797DFC] ">Registered Now</button>
+                </div>
+            </div>
+            <div class="right items-center">
+                <img class="bg-[#12132D] " src="/img/joinforum.png" alt="">
+            </div>
+        </div>
+
+        <!-- latest Post -->
+        <div class="post mt-10 text-black px-4 md:px-0">
+            <div class="top flex flex-col justify-center items-center">
+                <h1 class="text-xl md:text-4xl font-bold">Latest Posts</h1>
+                <p class="my-2">
+                    Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined .
+                </p>
+            </div>
+
+
+            <div class="PostBottom flex flex-col md:flex-row justify-center gap-10 items-center">
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer mt-10 py-10 bg-[#f5f5f5] text-black flex justify-center flex-col items-center">
+            <div class="footerTop border-b-[0.2px] border-gray-300 items-center flex flex-col bg-[#f5f5f5]">
+                <h1 class="font-bold text-2xl text-[#12132D] bg-[#f5f5f5]">Data Forum</h1>
+                <p class="bg-[#f5f5f5]">
+                    Join our data forum for insightful discussions, tips, and tricks on analytics, visualization, and
+                    data science practices. Connect today!"
+                </p>
+                <div class="icons flex justify-center gap-3  text-lg bg-[#f5f5f5]">
+                    <div  class="bg-[#f5f5f5]">
+                        <i class="fa-brands fa-facebook "></i>
+                    </div>
+                    <div class="bg-[#f5f5f5]">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="bg-[#f5f5f5]">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <div class="bg-[#f5f5f5]">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="coppyright bg-[#f5f5f5]">
+                2024, All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
 </body>
+
 </html>
